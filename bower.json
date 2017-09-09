@@ -1,0 +1,21 @@
+{
+  "name": "heidou",
+  "homepage": "https://github.com/a-wing/",
+  "authors": [
+    "YongXin Shi <shiyongxin@aliyun.com>"
+  ],
+  "description": "heidou_app_index",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "^0.100.2",
+    "vue": "^2.4.2"
+  }
+}

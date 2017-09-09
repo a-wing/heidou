@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>黑豆校园</title>
+	<meta name="viewport" content="width=device-width" />
+
+	<link type="text/css" rel="stylesheet" href="./bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
+	<script type="text/javascript" src="./bower_components/vue/dist/vue.min.js"></script>
+
+</head>
+<body>
+	<script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="./bower_components/materialize/dist/js/materialize.min.js"></script>
+<h3 class="center-align">黑豆校园</h3>
+
+<div id="Layer1" style="position:fixed; width:100%; height:100%; z-index:-1">
+<img src="./img/backgound.jpg" height="100%" width="100%"/>
+</div>
+
+<div class="container container-fluid">
+	<div class="row">
+		<div id="app">
+    	<div v-for="item in items">
+
+      	<div class="col s12 m3">
+					<a v-bind:href="[ item.link ]">
+          	<div class="card">
+            	<div class="card-image">
+              	<img class="responsive-img" v-bind:src="[ item.img ]">
+              	<span class="card-title">{{ item.name }}</span>
+            	</div>
+            <div class="card-content">
+              <p>{{ item.address }}</p>
+            </div>
+          	</div>
+					</a>
+        </div>
+
+				</div>
+			</div>
+
+	</div>
+</div>
+<hr/>
+</body>
+<script type="text/javascript">
+
+function getLocation() {
+
+		var options={
+				enableHighAccuracy:true,
+				maximumAge:1000
+		}
+		if(navigator.geolocation){
+				//浏览器支持geolocation
+				navigator.geolocation.getCurrentPosition(onSuccess,onError,options)
+
+		}else{
+				//浏览器不支持geolocation
+		}
+}
+function onSuccess(position) {
+		//返回用户位置
+		//经度
+		var longitude =position.coords.longitude
+		//纬度
+		var latitude = position.coords.latitude
+
+		//alert(longitude)
+		//alert(latitude)
+		//alert(app.items[0].x)
+
+		//app.run(0, 1)
+		app.bubbleSort(longitude, latitude)
+
+}
+           //失败时
+           function onError(error){
+               switch(error.code){
+                   case 1:
+                   alert("位置服务被拒绝")
+                   break
+
+                   case 2:
+                   alert("暂时获取不到位置信息")
+                   break
+
+                   case 3:
+                   alert("获取信息超时")
+                   break
+
+                   case 4:
+									 alert("未知错误")
+                   break
+               }
+
+           }
+           window.onload=getLocation
+
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    items: [
+      {
+				name: '吉林大学',
+      	address : '前进大街',
+      	img: './img/items/1.jpg',
+      	x: 188.991611,
+      	y: 31.565726,
+      	link: '整个牛项目'
+			}, {
+				name: '2222222222222',
+      	address : '22address',
+      	img: './img/items/2.jpg',
+      	x: 120.824794,
+      	y: 31.171069,
+      	link: '整个牛项目'
+			}, {
+				name: '333333333333333',
+      	address : '33address',
+      	img: './img/items/3.jpg',
+      	x: 117.168332,
+      	y: 30.870013,
+      	link: '整个牛项目'
+			}
+    ]
+  },
+	methods: {
+		bubbleSort: function (longitude, latitude) {
+			var i = this.items.length, j
+    	var tempExchangVal
+    	while (i > 0) {
+				for (j = 0; j < i - 1; j++) {
+					if ((Math.pow((longitude - this.items[j].x), 2) +  Math.pow((latitude - this.items[j].y), 2)) > (Math.pow((longitude - this.items[j + 1].x), 2) +  Math.pow((latitude - this.items[j + 1].y), 2)))
+					{
+						tempExchangVal = this.items[j]
+            this.items[j] = this.items[j + 1]
+            this.items[j + 1] = tempExchangVal
+          }
+        }
+				i--
+			}
+			this.$set(this.items)
+
+		}
+	}
+})
+
+</script>
+</html>
