@@ -37,14 +37,26 @@
 					</a>
         </div>
 
-				</div>
 			</div>
+		</div>
 
 	</div>
 </div>
 <hr/>
 </body>
 <script type="text/javascript">
+
+$(function() {
+    $.ajax({
+        type: "get",
+        url: "./data.json",
+        dataType: "json",
+        success: function(response, status, xhr) {
+					app.items = response
+				}
+    })
+})
+
 
 function getLocation() {
 
@@ -67,36 +79,33 @@ function onSuccess(position) {
 		//纬度
 		var latitude = position.coords.latitude
 
-		//alert(longitude)
+		alert(longitude)
 		//alert(latitude)
-		//alert(app.items[0].x)
 
-		//app.run(0, 1)
 		app.bubbleSort(longitude, latitude)
 
 }
-           //失败时
-           function onError(error){
-               switch(error.code){
-                   case 1:
-                   alert("位置服务被拒绝")
-                   break
+//失败时
+function onError(error){
+	switch(error.code){
+		case 1:
+    alert("位置服务被拒绝")
+    break
 
-                   case 2:
-                   alert("暂时获取不到位置信息")
-                   break
+    case 2:
+    alert("暂时获取不到位置信息")
+    break
 
-                   case 3:
-                   alert("获取信息超时")
-                   break
+  	case 3:
+    alert("获取信息超时")
+    break
 
-                   case 4:
-									 alert("未知错误")
-                   break
-               }
-
-           }
-           window.onload=getLocation
+    case 4:
+		alert("未知错误")
+    break
+    }
+}
+window.onload=getLocation
 
 
 var app = new Vue({
