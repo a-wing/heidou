@@ -1,24 +1,24 @@
 [
   {
-    "name": "吉林大学",
-    "address" : "前进大街",
-    "img": "./img/items/1.jpg",
-    "x": "188.991611",
-    "y": "31.565726",
-    "link": "整个牛项目"
+    "name": "长春工程学院",
+    "address" : "长春市宽平大路395号",
+    "img": "./img/items/changgongcheng.jpg",
+    "x": "125.29047",
+    "y": "43.858889",
+    "link": "http://www.universityto.me/app/index.php?i=4&c=entry&ctrl=wmall&ac=home&op=guide&do=mobile&m=we7_wmall"
   }, {
     "name": "44444444",
-    "address" : "前进大街",
-    "img": "./img/items/1.jpg",
-    "x": "120.991611",
-    "y": "31.565726",
-    "link": "整个牛项目"
+    "address" : "长春市高新区硅谷大街博识路168号",
+    "img": "./img/items/donghua.jpg",
+    "x": "125.267992",
+    "y": "43.826126",
+    "link": "http://www.universityto.me/app/index.php?i=5&c=entry&ctrl=wmall&ac=home&op=guide&do=mobile&m=we7_wmall"
   }, {
     "name": "444pppppppp",
-    "address" : "前进大街",
-    "img": "./img/items/1.jpg",
-    "x": "117.991611",
-    "y": "31.565726",
-    "link": "整个牛项目"
+    "address" : "吉林省长春市朝阳区高新技术产业开发区卓越大街881号",
+    "img": "./img/items/changxin.jpg",
+    "x": "125.219018",
+    "y": "43.780645",
+    "link": "http://www.universityto.me/app/index.php?i=9&c=entry&ctrl=wmall&ac=home&op=guide&do=mobile&m=we7_wmall"
   }
 ]
