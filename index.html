@@ -13,7 +13,9 @@
 	<script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="./bower_components/materialize/dist/js/materialize.min.js"></script>
 
-	<img class="responsive-img" src="./img/banners/1.jpg">
+	<a href="aaaaa">
+		<img class="responsive-img" src="./img/banners/1.jpg" />
+	</a>
 	<br />
 	<br />
 	<h5 class="center-align">—请选择你的学校点击进入—</h5>
@@ -83,7 +85,7 @@ function onSuccess(position) {
 		//纬度
 		var latitude = position.coords.latitude
 
-		alert(longitude)
+		//alert(longitude)
 		//alert(latitude)
 
 		app.bubbleSort(longitude, latitude)
@@ -146,7 +148,7 @@ var app = new Vue({
     	var tempExchangVal
     	while (i > 0) {
 				for (j = 0; j < i - 1; j++) {
-					if ((Math.pow((longitude - this.items[j].x), 2) +  Math.pow((latitude - this.items[j].y), 2)) > (Math.pow((longitude - this.items[j + 1].x), 2) +  Math.pow((latitude - this.items[j + 1].y), 2)))
+					if ((Math.pow((longitude - this.items[j].lng), 2) +  Math.pow((latitude - this.items[j].lat), 2)) > (Math.pow((longitude - this.items[j + 1].lng), 2) +  Math.pow((latitude - this.items[j + 1].lat), 2)))
 					{
 						tempExchangVal = this.items[j]
             this.items[j] = this.items[j + 1]

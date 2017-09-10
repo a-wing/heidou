@@ -3,22 +3,36 @@
     "name": "长春工程学院",
     "address" : "长春市宽平大路395号",
     "img": "./img/items/changgongcheng.jpg",
-    "x": "125.29047",
-    "y": "43.858889",
+    "lng": "125.29047",
+    "lat": "43.858889",
     "link": "http://www.universityto.me/app/index.php?i=4&c=entry&ctrl=wmall&ac=home&op=guide&do=mobile&m=we7_wmall"
   }, {
-    "name": "44444444",
+    "name": "吉林动画学院",
     "address" : "长春市高新区硅谷大街博识路168号",
     "img": "./img/items/donghua.jpg",
-    "x": "125.267992",
-    "y": "43.826126",
+    "lng": "125.267992",
+    "lat": "43.826126",
     "link": "http://www.universityto.me/app/index.php?i=5&c=entry&ctrl=wmall&ac=home&op=guide&do=mobile&m=we7_wmall"
   }, {
-    "name": "444pppppppp",
+    "name": "长春信息职业技术学院",
     "address" : "吉林省长春市朝阳区高新技术产业开发区卓越大街881号",
     "img": "./img/items/changxin.jpg",
-    "x": "125.219018",
-    "y": "43.780645",
+    "lng": "125.219018",
+    "lat": "43.780645",
     "link": "http://www.universityto.me/app/index.php?i=9&c=entry&ctrl=wmall&ac=home&op=guide&do=mobile&m=we7_wmall"
+  }, {
+    "name": "长春光华学院",
+    "address" : "吉林省长春市经济技术开发区武汉路3555号",
+    "img": "./img/items/guanghua.jpg",
+    "lng": "125.441458",
+    "lat": "43.883363",
+    "link": "http://www.universityto.me/app/index.php?i=16&c=entry&ctrl=wmall&ac=home&op=guide&do=mobile&m=we7_wmall"
+  }, {
+    "name": "哈尔滨信息工程学院",
+    "address" : "同哈公路南50米",
+    "img": "./img/items/haxinxi.jpg",
+    "lng": "127.219267",
+    "lat": "45.75334",
+    "link": "http://www.universityto.me/app/index.php?i=19&c=entry&ctrl=wmall&ac=home&op=guide&do=mobile&m=we7_wmall"
   }
 ]
