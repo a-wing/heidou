@@ -20,3 +20,8 @@
 ### 二次开发注意事项
 
 引用库 materialize vuejs
+
+### Todo
+- [x] banner 轮播
+- [ ] 搜索信息
+- [ ] 精准定位
