@@ -16,6 +16,12 @@
 	<a href="aaaaa">
 		<img class="responsive-img" src="./img/banners/1.jpg" />
 	</a>
+	<div class="carousel carousel-slider">
+		<a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
+		<a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+		<a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+		<a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+	</div>
 	<br />
 	<br />
 	<h5 class="center-align">—请选择你的学校点击进入—</h5>
@@ -52,6 +58,17 @@
 </body>
 <script type="text/javascript">
 
+$('.carousel.carousel-slider').carousel({fullWidth: true})
+
+//轮播执行下一张函数
+function carouselStart() {
+	$('.carousel').carousel('next')
+}
+
+//重复执行下一张函数时间隔为 3000ms
+window.setInterval(carouselStart,3000);
+
+//异步请求数据
 $(function() {
     $.ajax({
         type: "get",
