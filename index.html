@@ -54,16 +54,46 @@
 
 			<div class="center-align" >
 				<div class="preloader-wrapper big active">
-					<div class="spinner-layer spinner-blue">
-						<div class="circle-clipper left">
-							<div class="circle"></div>
-						</div><div class="gap-patch">
-							<div class="circle"></div>
-						</div><div class="circle-clipper right">
-							<div class="circle"></div>
-						</div>
-					</div>
-				</div>
+		       <div class="spinner-layer spinner-blue">
+		         <div class="circle-clipper left">
+		           <div class="circle"></div>
+		         </div><div class="gap-patch">
+		           <div class="circle"></div>
+		         </div><div class="circle-clipper right">
+		           <div class="circle"></div>
+		         </div>
+		       </div>
+
+		       <div class="spinner-layer spinner-red">
+		         <div class="circle-clipper left">
+		           <div class="circle"></div>
+		         </div><div class="gap-patch">
+		           <div class="circle"></div>
+		         </div><div class="circle-clipper right">
+		           <div class="circle"></div>
+		         </div>
+		       </div>
+
+		       <div class="spinner-layer spinner-yellow">
+		         <div class="circle-clipper left">
+		           <div class="circle"></div>
+		         </div><div class="gap-patch">
+		           <div class="circle"></div>
+		         </div><div class="circle-clipper right">
+		           <div class="circle"></div>
+		         </div>
+		       </div>
+
+		       <div class="spinner-layer spinner-green">
+		         <div class="circle-clipper left">
+		           <div class="circle"></div>
+		         </div><div class="gap-patch">
+		           <div class="circle"></div>
+		         </div><div class="circle-clipper right">
+		           <div class="circle"></div>
+		         </div>
+		       </div>
+		     </div>
 			</div>
 
 		</div>
@@ -86,7 +116,7 @@ function carouselStart() {
 window.setInterval(carouselStart,3000)
 
 //异步加载定时器，为了有过渡效果
-window.setTimeout(ajaxData,1000)
+window.setTimeout(ajaxData,3000)
 
 //异步请求数据
 function ajaxData() {
