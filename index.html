@@ -31,8 +31,10 @@
 <div class="container container-fluid">
 	<div class="row">
 		<div id="app">
-    	<div v-for="item in items">
 
+		<div v-if="items">
+
+    	<div v-for="item in items">
       	<div class="col s12 m6 l4 xl3">
 					<a v-bind:href="[ item.link ]">
           	<div class="card">
@@ -45,8 +47,26 @@
           	</div>
 					</a>
         </div>
-
 			</div>
+
+		</div>
+		<div v-else>
+
+			<div class="center-align" >
+				<div class="preloader-wrapper big active">
+					<div class="spinner-layer spinner-blue">
+						<div class="circle-clipper left">
+							<div class="circle"></div>
+						</div><div class="gap-patch">
+							<div class="circle"></div>
+						</div><div class="circle-clipper right">
+							<div class="circle"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
 		</div>
 
 	</div>
@@ -65,8 +85,11 @@ function carouselStart() {
 //重复执行下一张函数时间隔为 3000ms
 window.setInterval(carouselStart,3000)
 
+//异步加载定时器，为了有过渡效果
+window.setTimeout(ajaxData,1000)
+
 //异步请求数据
-$(function() {
+function ajaxData() {
     $.ajax({
         type: "get",
         url: "./data.json",
@@ -75,7 +98,7 @@ $(function() {
 					app.items = response
 				}
     })
-})
+}
 
 function getLocation() {
 		var options={
@@ -127,30 +150,7 @@ window.onload=getLocation
 var app = new Vue({
   el: '#app',
   data: {
-    items: [
-      {
-				name: '吉林大学',
-      	address : '前进大街',
-      	img: './img/items/1.jpg',
-      	x: 188.991611,
-      	y: 31.565726,
-      	link: '整个牛项目'
-			}, {
-				name: '2222222222222',
-      	address : '22address',
-      	img: './img/items/2.jpg',
-      	x: 120.824794,
-      	y: 31.171069,
-      	link: '整个牛项目'
-			}, {
-				name: '333333333333333',
-      	address : '33address',
-      	img: './img/items/3.jpg',
-      	x: 117.168332,
-      	y: 30.870013,
-      	link: '整个牛项目'
-			}
-    ]
+    items: false
   },
 	methods: {
 		bubbleSort: function (longitude, latitude) {
