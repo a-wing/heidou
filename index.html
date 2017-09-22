@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="./bower_components/materialize/dist/js/materialize.min.js"></script>
 
-	<div id="location" />
+	<div id="location"></div>
 
 	<div class="carousel carousel-slider">
 		<a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
@@ -117,10 +117,10 @@ function carouselStart() {
 }
 
 //重复执行下一张函数时间隔为 3000ms
-window.setInterval(carouselStart,3000)
+window.setInterval(carouselStart, 3000)
 
 //异步加载定时器，为了有过渡效果
-window.setTimeout(ajaxData,3000)
+window.setTimeout(ajaxData, 500)
 
 //异步请求数据
 function ajaxData() {
@@ -180,13 +180,21 @@ function onError(error){
 }
 window.onload = getLocation
 
-window.onload = validateLocation(getCookie("point_lng"), getCookie("point_lat"))
+//window.onload = validateLocation(getCookie("point_lng"), getCookie("point_lat"))
+
+window.setTimeout(getL, 1000)
+
+function getL() {
+	validateLocation(getCookie("point_lng"), getCookie("point_lat"))
+}
 
 function validateLocation(point_lng, point_lat) {
 	if (point_lng) {
-		alert("YYYYYYYYYY")
+		//alert(point_lng+', '+point_lat)
+		app.bubbleSort(point_lng, point_lat)
 	} else {
-		alert("NULL")
+		//alert("NULL")
+		window.setTimeout(getL, 300)
 	}
 }
 
@@ -235,7 +243,7 @@ function setCookie(name,value) {
 }
 
 	// 百度地图API功能
-	var map = new BMap.Map("getLocation");
+	var map = new BMap.Map("location");
 	var point = new BMap.Point(116.331398,39.897445);
 	map.centerAndZoom(point,12);
 
@@ -245,7 +253,7 @@ function setCookie(name,value) {
 			var mk = new BMap.Marker(r.point);
 			map.addOverlay(mk);
 			map.panTo(r.point);
-			alert('您的位置：'+r.point.lng+','+r.point.lat);
+			//alert('您的位置：'+r.point.lng+','+r.point.lat);
 			setCookie('point_lng', r.point.lng)
 			setCookie('point_lat', r.point.lat)
 		}
