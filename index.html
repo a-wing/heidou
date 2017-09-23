@@ -197,7 +197,7 @@ function getL() {
 }
 
 function validateLocation(point_lng, point_lat) {
-	if (point_lng) {
+	if (point_lng && point_lat && app.items) {
 		//alert(point_lng+', '+point_lat)
 		app.bubbleSort(point_lng, point_lat)
 	} else {
