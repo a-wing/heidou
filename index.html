@@ -194,7 +194,7 @@ function validateLocation(point_lng, point_lat) {
 		app.bubbleSort(point_lng, point_lat)
 	} else {
 		alert("NULL")
-		window.setTimeout(getL, 300)
+		window.setTimeout(getL, 1000)
 	}
 }
 
@@ -253,7 +253,7 @@ function setCookie(name,value) {
 			var mk = new BMap.Marker(r.point);
 			map.addOverlay(mk);
 			map.panTo(r.point);
-			//alert('您的位置：'+r.point.lng+','+r.point.lat);
+			alert('您的位置：'+r.point.lng+','+r.point.lat);
 			setCookie('point_lng', r.point.lng)
 			setCookie('point_lat', r.point.lat)
 		}
