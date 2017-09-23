@@ -133,6 +133,7 @@ function ajaxData() {
 				}
     })
 }
+
 /*
 获坐标方法
 使用H5原生获坐函数，因效果不理想这段函数已不使用，改用百度地图Bmap的api
@@ -182,8 +183,10 @@ function onError(error){
     break
     }
 }
+
+window.onload = getLocation
+
 */
-//window.onload = getLocation
 
 //window.onload = validateLocation(getCookie("point_lng"), getCookie("point_lat"))
 
