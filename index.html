@@ -133,6 +133,10 @@ function ajaxData() {
 				}
     })
 }
+/*
+获坐标方法
+使用H5原生获坐函数，因效果不理想这段函数已不使用，改用百度地图Bmap的api
+
 
 function getLocation() {
 		var options={
@@ -178,6 +182,7 @@ function onError(error){
     break
     }
 }
+*/
 //window.onload = getLocation
 
 //window.onload = validateLocation(getCookie("point_lng"), getCookie("point_lat"))
@@ -190,14 +195,15 @@ function getL() {
 
 function validateLocation(point_lng, point_lat) {
 	if (point_lng) {
-		alert(point_lng+', '+point_lat)
+		//alert(point_lng+', '+point_lat)
 		app.bubbleSort(point_lng, point_lat)
 	} else {
-		alert("NULL")
+		//alert("NULL")
 		window.setTimeout(getL, 1000)
 	}
 }
 
+// 获取cookie
 function getCookie(name)
 {
     var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)"); //正则匹配
@@ -238,11 +244,16 @@ var app = new Vue({
 
 ​<script type="text/javascript">
 
+// 写入cookie函数
 function setCookie(name,value) {
     document.cookie = name + '=' + escape(value);
 }
 
 	// 百度地图API功能
+
+	// API密钥在获取API函数发送，以后出现问题可尝试替换密钥
+
+
 	var map = new BMap.Map("location");
 	var point = new BMap.Point(116.331398,39.897445);
 	map.centerAndZoom(point,12);
@@ -253,7 +264,7 @@ function setCookie(name,value) {
 			var mk = new BMap.Marker(r.point);
 			map.addOverlay(mk);
 			map.panTo(r.point);
-			alert('您的位置：'+r.point.lng+','+r.point.lat);
+			//alert('您的位置：'+r.point.lng+','+r.point.lat);
 			setCookie('point_lng', r.point.lng)
 			setCookie('point_lat', r.point.lat)
 		}
