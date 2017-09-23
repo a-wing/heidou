@@ -178,7 +178,7 @@ function onError(error){
     break
     }
 }
-window.onload = getLocation
+//window.onload = getLocation
 
 //window.onload = validateLocation(getCookie("point_lng"), getCookie("point_lat"))
 
@@ -190,10 +190,10 @@ function getL() {
 
 function validateLocation(point_lng, point_lat) {
 	if (point_lng) {
-		//alert(point_lng+', '+point_lat)
+		alert(point_lng+', '+point_lat)
 		app.bubbleSort(point_lng, point_lat)
 	} else {
-		//alert("NULL")
+		alert("NULL")
 		window.setTimeout(getL, 300)
 	}
 }
